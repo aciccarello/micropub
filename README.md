@@ -1,6 +1,7 @@
 # Micropub.js
 
 A [micropub](https://micropub.net/) helper library for JavaScript.
+Forked from https://github.com/grantcodes/micropub 
 
 ## Docs
 
