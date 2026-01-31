@@ -272,7 +272,8 @@ class Micropub {
 			"tokenEndpoint",
 		]);
 
-		const { me, clientId, redirectUri, tokenEndpoint, codeVerifier } = this.options;
+		const { me, clientId, redirectUri, tokenEndpoint, codeVerifier } =
+			this.options;
 
 		try {
 			const data = {
@@ -281,7 +282,7 @@ class Micropub {
 				code,
 				client_id: clientId,
 				redirect_uri: redirectUri,
-				code_verifier: codeVerifier
+				code_verifier: codeVerifier,
 			};
 
 			const res = await this.fetch({
@@ -352,9 +353,9 @@ class Micropub {
 
 			if (usePkce) {
 				const { codeChallenge, codeVerifier } = await generatePkceParameters();
-				authParams.code_challenge = codeChallenge
-				authParams.code_challenge_method = "S256"
-				this.options = { codeVerifier }
+				authParams.code_challenge = codeChallenge;
+				authParams.code_challenge_method = "S256";
+				this.options = { codeVerifier };
 			}
 
 			return appendQueryString(authEndpoint, authParams as QueryVars);

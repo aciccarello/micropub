@@ -28,7 +28,7 @@ describe("generatePkceParameters", () => {
 			new Uint8Array(new TextEncoder().encode(params.codeVerifier)),
 		);
 
-		const expectChallenge = base64UrlEncode(new Uint8Array(digest))
+		const expectChallenge = base64UrlEncode(new Uint8Array(digest));
 		assert.strictEqual(params.codeChallenge, expectChallenge);
 	});
 

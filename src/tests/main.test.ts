@@ -156,10 +156,10 @@ describe("Micropub", () => {
 		assert.equal(parsedUrl.searchParams.get("state"), baseOptions.state);
 		assert.equal(parsedUrl.searchParams.get("response_type"), "code");
 		assert.equal(parsedUrl.searchParams.get("scope"), "create delete update");
-		assert.ok(parsedUrl.searchParams.get("code_challenge"))
+		assert.ok(parsedUrl.searchParams.get("code_challenge"));
 		assert.equal(parsedUrl.searchParams.get("code_challenge_method"), "S256");
 	});
-	
+
 	it("Get auth endpoint (PKCE off)", async () => {
 		mock.method(global, "fetch", () => ({
 			status: 200,
@@ -181,7 +181,7 @@ describe("Micropub", () => {
 		assert.equal(parsedUrl.searchParams.get("state"), baseOptions.state);
 		assert.equal(parsedUrl.searchParams.get("response_type"), "code");
 		assert.equal(parsedUrl.searchParams.get("scope"), "create delete update");
-		assert.equal(parsedUrl.searchParams.get("code_challenge"), null)
+		assert.equal(parsedUrl.searchParams.get("code_challenge"), null);
 		assert.equal(parsedUrl.searchParams.get("code_challenge_method"), null);
 	});
 
